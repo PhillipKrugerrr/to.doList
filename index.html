@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily task list with timeline view">
+    <meta name="author" content="Phillip">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>To-do List</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>To-do List</h1>
+            <div class="stats">
+                <span class="stat">Total: <strong id="stat-total">0</strong></span>
+                <span class="stat">Done: <strong id="stat-done">0</strong></span>
+            </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); add()">
+            <div class="form-row">
+                <input type="text" id="input-task" placeholder="New task..." required>
+            </div>
+            <div class="form-row">
+                <input type="time" id="input-time" value="09:00">
+                <select id="input-day">
+                    <option value="hoje">Today</option>
+                    <option value="amanha">Tomorrow</option>
+                    <option value="depois">Day after tomorrow</option>
+                    <option value="semana">This week</option>
+                </select>
+                <select id="input-category">
+                    <option value="trabalho">Work</option>
+                    <option value="pessoal">Personal</option>
+                    <option value="saude">Health</option>
+                    <option value="outros">Other</option>
+                </select>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+
+        <div id="task-list"></div>
+
+    </div>
+    <script src="to-do-list.js"></script>
+</body>
+</html>
